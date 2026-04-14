@@ -3,156 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BloodStrike Store | SenseiMC</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>SenseiMC Elite | BloodStrike Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #f39c12;
-            --bg: #0b0d0f;
-            --text: #ffffff;
-            --accent: #27ae60;
+            --gold: #f1c40f;
+            --blood: #e74c3c;
+            --dark: #050505;
+            --card: #121212;
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
+            background-color: var(--dark);
+            color: white;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
-            padding: 10px;
+            padding: 0;
         }
 
-        .container {
-            max-width: 450px;
-            margin: 20px auto;
-            background: #15181c;
-            padding: 25px;
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/800x400?text=BloodStrike+Banner');
+            background-size: cover;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        h1 { font-family: 'Orbitron', sans-serif; color: var(--gold); text-shadow: 0 0 10px rgba(241, 196, 15, 0.5); }
+
+        .loyalty-card {
+            background: linear-gradient(45deg, #1a1a1a, #2c3e50);
+            margin: 20px;
+            padding: 20px;
             border-radius: 15px;
-            border: 1px solid #2a2e35;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid var(--gold);
+            text-align: center;
         }
 
-        header { text-align: center; margin-bottom: 25px; }
-        h1 { font-family: 'Orbitron', sans-serif; color: var(--primary); font-size: 1.4rem; margin: 0; }
+        .points-bar {
+            background: #333;
+            height: 10px;
+            border-radius: 5px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
 
-        .payment-card {
-            background: #1e272e;
-            padding: 15px;
+        .points-progress {
+            background: var(--gold);
+            width: 35%; /* Esto cambiará con el sistema de cuentas */
+            height: 100%;
+            box-shadow: 0 0 10px var(--gold);
+        }
+
+        .grid-productos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .producto-card {
+            background: var(--card);
             border-radius: 10px;
-            margin-bottom: 20px;
-            border-left: 5px solid var(--accent);
+            overflow: hidden;
+            border: 1px solid #333;
+            transition: 0.3s;
         }
 
-        .form-group { margin-bottom: 18px; }
-        label { display: block; margin-bottom: 6px; font-size: 0.8rem; font-weight: bold; color: #bdc3c7; }
+        .producto-card:hover { border-color: var(--gold); transform: translateY(-5px); }
 
-        input, select {
+        .producto-img {
             width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid #34495e;
-            background: #25282c;
-            color: white;
-            box-sizing: border-box;
-            font-size: 1rem;
+            height: 100px;
+            background: #222;
+            object-fit: cover;
         }
 
-        /* Elimina flechas de input number en Chrome/Safari/Edge */
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+        .producto-info { padding: 10px; text-align: center; }
+        .precio { color: var(--gold); font-weight: bold; font-size: 1.1rem; }
 
-        .btn-confirm {
-            background-color: #25d366;
-            color: white;
+        .btn-buy {
+            background: var(--gold);
+            color: black;
             border: none;
-            padding: 16px;
+            padding: 10px;
             width: 100%;
-            border-radius: 8px;
             font-weight: bold;
-            font-size: 1rem;
             cursor: pointer;
             text-transform: uppercase;
-            margin-top: 10px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
         }
 
-        .footer-tag { text-align: center; margin-top: 25px; font-size: 0.75rem; color: #555; }
+        .footer { padding: 20px; text-align: center; font-size: 0.8rem; color: #555; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1>BLOODSTRIKE RECARGAS</h1>
-        <p style="font-size: 0.85rem; color: #888;">Seguro • Rápido • Confiable</p>
-    </header>
+<div class="hero">
+    <h1>SENSEI MC STORE</h1>
+    <p>RECARGAS OFICIALES DE BLOODSTRIKE</p>
+</div>
 
-    <div class="payment-card">
-        <strong style="color: var(--accent); font-size: 0.8rem;">DATOS PAGO MÓVIL:</strong>
-        <p style="margin: 5px 0; font-size: 0.9rem;">
-            0102 • 31.644.563 • 04262990035
-        </p>
+<div class="loyalty-card">
+    <h3 style="margin:0; font-size: 0.9rem;">PROGRAMA DE PUNTOS ELITE</h3>
+    <div class="points-bar"><div class="points-progress"></div></div>
+    <p style="font-size: 0.8rem;">¡Llevas 7/20 recargas! Faltan 13 para tu <strong>ORO GRATIS</strong></p>
+</div>
+
+<div class="grid-productos">
+    <div class="producto-card">
+        <img src="https://via.placeholder.com/200x200?text=105+Gold" class="producto-img">
+        <div class="producto-info">
+            <div style="font-size: 0.8rem;">105 ORO</div>
+            <div class="precio">$1.20</div>
+        </div>
+        <button class="btn-buy" onclick="pedir('105 Oro')">Comprar</button>
     </div>
 
-    <div class="form-group">
-        <label>ID DEL JUGADOR:</label>
-        <input type="number" id="player_id" placeholder="ID numérico aquí" required>
-    </div>
-
-    <div class="form-group">
-        <label>TU NOMBRE EN EL JUEGO:</label>
-        <input type="text" id="player_nick" placeholder="Tu Nickname (opcional)" required>
-    </div>
-
-    <div class="form-group">
-        <label>SELECCIONA TU PACK:</label>
-        <select id="product_selection">
-            <option value="105 Oro - $1.20">105 Oro - $1.20</option>
-            <option value="310 Oro - $3.40">310 Oro - $3.40</option>
-            <option value="530 Oro - $5.60">530 Oro - $5.60</option>
-            <option value="1080 Oro - $11.20">1080 Oro - $11.20</option>
-            <option value="2200 Oro - $22.50">2200 Oro - $22.50</option>
-            <option value="5800 Oro - $56.00">5800 Oro - $56.00</option>
-            <option value="Pase Elite - $5.80">Pase Elite - $5.80</option>
-            <option value="Pase Premium - $12.00">Pase Premium - $12.00</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label>REFERENCIA DEL PAGO (SÓLO NÚMEROS):</label>
-        <input type="number" id="pay_ref" placeholder="Ej: 847291" required>
-    </div>
-
-    <button class="btn-confirm" onclick="enviarPedido()">
-        Pedir por WhatsApp
-    </button>
-
-    <div class="footer-tag">
-        © 2026 SenseiMC Store
+    <div class="producto-card">
+        <img src="https://via.placeholder.com/200x200?text=Pase+Elite" class="producto-img">
+        <div class="producto-info">
+            <div style="font-size: 0.8rem;">PASE ELITE</div>
+            <div class="precio">$5.80</div>
+        </div>
+        <button class="btn-buy" onclick="pedir('Pase Elite')">Comprar</button>
     </div>
 </div>
 
+<div style="padding: 20px;">
+    <input type="number" id="id_player" placeholder="ID de Jugador" style="width:100%; padding:12px; background:#1a1a1a; color:white; border:1px solid #333; border-radius:8px;">
+</div>
+
+<div class="footer">
+    © 2026 SenseiMC | Guarenas, Venezuela
+</div>
+
 <script>
-    function enviarPedido() {
-        const telefono = "584223730104";
-        const id = document.getElementById('player_id').value;
-        const nick = document.getElementById('player_nick').value;
-        const producto = document.getElementById('product_selection').value;
-        const ref = document.getElementById('pay_ref').value;
-
-        if (!id || !ref) {
-            alert("Señor, el ID y la Referencia son obligatorios.");
-            return;
-        }
-
-        const mensaje = `*PEDIDO BLOODSTRIKE*%0A` +
-                        `--------------------------%0A` +
-                        `*ID:* ${id}%0A` +
-                        `*Nick:* ${nick || 'No indicado'}%0A` +
-                        `*Pack:* ${producto}%0A` +
-                        `*Ref:* ${ref}%0A` +
-                        `--------------------------`;
-
-        window.open(`https://wa.me/${telefono}?text=${mensaje}`, '_blank');
+    function pedir(prod) {
+        const id = document.getElementById('id_player').value;
+        if(!id) { alert("Señor, ingrese su ID primero"); return; }
+        const msg = `*PEDIDO SENSEI STORE*%0A*ID:* ${id}%0A*Producto:* ${prod}`;
+        window.open(`https://wa.me/584223730104?text=${msg}`);
     }
 </script>
 
